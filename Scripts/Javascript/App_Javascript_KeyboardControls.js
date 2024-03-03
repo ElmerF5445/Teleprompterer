@@ -36,6 +36,20 @@ document.addEventListener('keydown', (event) => {
 		}
 	}
 
+	if (keysPressed['PageUp']) {
+		console.log("UP");
+		TP_Prompt_Step("Up");
+	}
+
+	if (keysPressed['PageDown']) {
+		console.log("DOWN");
+		TP_Prompt_Step("Down");
+	}
+
+	if (keysPressed['Tab']) {
+		console.log("ENTER");
+		TP_Prompt_Toggle();
+	}
 });
 
 document.addEventListener('keyup', (event) => {

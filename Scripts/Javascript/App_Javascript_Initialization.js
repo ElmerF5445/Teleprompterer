@@ -5,13 +5,13 @@
 /* App Information */
 let App_Info = {
     // Title of the project
-    Title: "ERUMA UI",
+    Title: "Teleprompterer",
     // Title of the project's version
     Version_Title: "BETA 1.0",
     // Version number
     Version_Number: "1.0",
     // Latest compilation date of the project
-    Version_CompilationDate: "20 January 2024",
+    Version_CompilationDate: "3 March 2024",
     // Copyright text that appears in certain menu and screen elements
     Copyright_Title: "Content By ElmerF 2024",
     // Content By ElmerF logo
@@ -57,9 +57,9 @@ let App_HideElements = [];
 
 /* Page navigation */
 // Arrays of titles, IDs, and icons for the page navigation menu
-let App_PageNavigation_Titles = ["App Template", "Color Tester", "Settings"];
-let App_PageNavigation_Links = ["App_Template.html", "App_ColorTester.html", "App_UniversalSettings.html"];
-let App_PageNavigation_Icons = ["Assets/Icons/icon_home.png", "Assets/Icons/iconNew_customization.png", "Assets/Icons/icon_settings.png"];
+let App_PageNavigation_Titles = ["App Template", "Home", "Prompter"];
+let App_PageNavigation_Links = ["App_Template.html", "Pages/TP_Main.html", "Pages/TP_Prompter.html"];
+let App_PageNavigation_Icons = ["Assets/Icons/icon_home.png", "Assets/Icons/icon_home.png", "Assets/Icons/Placeholder.png"];
 
 var path = window.location.pathname;
 var App_CurrentPageName = path.split("/").pop();
@@ -101,6 +101,15 @@ function Startup_Page_ChangeConfigurations(){
             App_Property.Page_Icon = "Assets/Icons/icon_settings.png";
             App_Property.LoadingScreen_Style = 1;
         break;
+        case "TP_Main.html":
+            App_Property.Page_Title = "Home";
+            App_Property.Sidebar_UseTabs = false;
+            App_HideElements = ["Sidebar", "Header_SidebarToggle"];
+            break;
+        case "TP_Prompter.html":
+            App_Property.Page_Title = "Prompter";
+            App_Property.Sidebar_UseTabs = false;
+            App_HideElements = ["Sidebar", "Header_SidebarToggle"];
     }
     Startup_Page_ApplyConfigurations();
 }

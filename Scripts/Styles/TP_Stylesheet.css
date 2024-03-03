@@ -1,0 +1,15 @@
+.TP_Prompter{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.TP_Prompter_Text{
+    font-family: Roboto;
+    color: white;
+    margin: 0;
+    font-size: var(--TP-Prompter-Size);
+}
