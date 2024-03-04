@@ -18,7 +18,7 @@ function TP_Prompt_Load(){
 }
 
 
-var TP_Step_Distance = 10;
+var TP_Step_Distance = 100;
 var TP_Step_Location = 0;
 function TP_Prompt_Step(Direction){
     if (Direction == "Up"){
