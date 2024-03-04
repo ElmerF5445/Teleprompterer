@@ -89,8 +89,15 @@
             </p>
         </div>
     </div>
+    
     <div class="Subwindows" id="Subwindows">
+        <div class="TP_Prompter_Settings" > 
+            <div class="TP_Prompter_Settings_Icon" onclick="Subwindows_Close('TP_Prompter')">
+                <img src="Assets/Icons/icon_settings.png" draggable="false" loading="lazy" class="TP_Prompter_Settings_Icon_Icon"/>
+            </div>
+        </div>
         <div class="TP_Prompter" id="TP_Prompter">
+            
             <h1 class="TP_Prompter_Text" id="TP_Prompter_Text">
                 TEST
             </h1>
@@ -351,18 +358,27 @@
                     <!-- <h1 class="General_Title">
                         Edit prompt
                     </h1> -->
-                    <!-- <div class="Accordion" id="Accordion_IDHere">
+                    <div class="Accordion" id="Accordion_IDHere">
                         <div class="Accordion_Title" onclick="Accordion_Toggle(this.parentNode.id)">
                             <h2 class="Accordion_Title_Text">
-                                Edit prompt
+                                Settings
                             </h2>
                             <img class='Accordion_Title_Arrow' src='Assets/Icons/icon_downArrow.png' draggable='false' loading='lazy'/>
                         </div>
                         <div class="Accordion_Content" State="Expanded">
-                            <textarea class="Input_Text_Long" autocomplete="off" id="TP_InputPrompt"></textarea>
+                            <form class="Input_Form" Label_Position="Top" autocomplete="off">
+                                <label class="Input_Label" for="TP_Setting_StepValue">
+                                    Step distance: 
+                                </label>
+                                <input type="range" min="1" max="70" value="10" id="TP_Setting_StepValue" oninput="TP_Settings_ApplyChanges()"/>
+                                <label class="Input_Label" for="TP_Setting_FontSize">
+                                    Font size: 
+                                </label>
+                                <input type="range" min="0.5" max="20" value="2" id="TP_Setting_FontSize" oninput="TP_Settings_ApplyChanges()" />
+                            </form>
                         </div>
                     </div>
-                    <div class="General_Button" onclick="TP_Prompt_Save()">
+                    <!-- <div class="General_Button" onclick="TP_Prompt_Save()">
                         Start rolling
                     </div> -->
                 </div>
