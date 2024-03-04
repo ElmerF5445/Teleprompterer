@@ -51,7 +51,7 @@ document.addEventListener('keydown', (event) => {
 
 	if (keysPressed['Tab']) {
 		console.log("ENTER");
-		TP_Prompt_Toggle();
+		TP_Prompt_ToggleMovement();
 		event.preventDefault();
 	}
 });
@@ -59,3 +59,15 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('keyup', (event) => {
 	delete keysPressed[event.key];
 });
+
+// var interval = window.setInterval(function () {
+//     // do your thing, do your thing
+// }, 1000);
+
+// document.onkeypress = function () {
+//     if (/* some specific character was pressed */) {
+//         window.clearInterval(interval);
+
+//         // do some other thing, other thing
+//     }
+// };
