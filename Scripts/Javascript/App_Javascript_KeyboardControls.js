@@ -1,6 +1,7 @@
 let keysPressed = {}; 
 document.addEventListener('keydown', (event) => {
 	keysPressed[event.key] = true;
+	
 
 	if (keysPressed['Control'] && event.key == 'b') {
         if(Element_Attribute_Get("ClockScreen", "UI_Status") != "Disabled"){
@@ -38,17 +39,20 @@ document.addEventListener('keydown', (event) => {
 
 	if (keysPressed['PageUp']) {
 		console.log("UP");
-		TP_Prompt_Step("Up");
+		TP_Prompt_Step("Down");
+		event.preventDefault();
 	}
 
 	if (keysPressed['PageDown']) {
 		console.log("DOWN");
-		TP_Prompt_Step("Down");
+		TP_Prompt_Step("Up");
+		event.preventDefault();
 	}
 
 	if (keysPressed['Tab']) {
 		console.log("ENTER");
 		TP_Prompt_Toggle();
+		event.preventDefault();
 	}
 });
 
