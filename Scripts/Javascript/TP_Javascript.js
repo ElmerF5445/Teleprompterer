@@ -16,3 +16,42 @@ function TP_Prompt_Load(){
     //     TP_Prompt = "";
     // }
 }
+
+
+var TP_Step_Distance = 10;
+var TP_Step_Location = 0;
+function TP_Prompt_Step(Direction){
+    if (Direction == "Up"){
+        if (TP_Step_Distance != NaN || (TP_Step_Distance != null || TP_Step_Distance != undefined)){
+            TP_Step_Location -= TP_Step_Distance;
+        }
+        document.getElementById("TP_Prompter_Text").style.transform = "translateY(" + TP_Step_Location + "px)";
+    } else if (Direction == "Down") {
+        if (TP_Step_Distance != NaN || (TP_Step_Distance != null || TP_Step_Distance != undefined)){
+            TP_Step_Location += TP_Step_Distance;
+        }
+        document.getElementById("TP_Prompter_Text").style.transform = "translateY(" + TP_Step_Location + "px)";
+    }
+}
+
+var TP_Prompt_MoveContent = false;
+function TP_Prompt_ToggleMovement(){
+    if (TP_Prompt_MoveContent == false){
+        TP_Prompt_MoveContent = true;
+    } else if (TP_Prompt_MoveContent = true){
+        TP_Prompt_MoveContent = false;
+    }
+}
+
+function TP_Prompt_MoveText(){
+    if (TP_Prompt_MoveContent == true){
+        while (TP_Prompt_MoveContent == true){
+            TP_Prompt_Step('Up');
+        }
+    }
+}
+
+function TP_Settings_ApplyChanges(){
+    TP_Step_Distance = document.getElementById("TP_Setting_StepValue").value;
+    document.getElementById("TP_Prompter_Text").style.fontSize = document.getElementById("TP_Setting_FontSize").value + "rem";
+}
