@@ -38,17 +38,22 @@ var TP_Prompt_MoveContent = false;
 function TP_Prompt_ToggleMovement(){
     if (TP_Prompt_MoveContent == false){
         TP_Prompt_MoveContent = true;
+        Toasts_CreateToast("Assets/Icons/favicon.png", "Content auto move", "Enabled");
+        TP_Prompt_MoveText();
     } else if (TP_Prompt_MoveContent = true){
         TP_Prompt_MoveContent = false;
+        Toasts_CreateToast("Assets/Icons/favicon.png", "Content auto move", "Disabled");
+        window.clearInterval(interval);
     }
 }
 
 function TP_Prompt_MoveText(){
-    if (TP_Prompt_MoveContent == true){
-        while (TP_Prompt_MoveContent == true){
-            TP_Prompt_Step('Up');
-        }
+    window.clearInterval(interval);
+    var interval = window.setInterval(function () {
+        if (TP_Prompt_MoveContent == true){
+        TP_Prompt_Step("Up");
     }
+    }, 100);
 }
 
 function TP_Settings_ApplyChanges(){
